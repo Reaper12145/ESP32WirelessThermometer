@@ -1,0 +1,196 @@
+﻿Bezdrátový teploměr
+
+
+
+
+Tento projekt využívá ESP32 jako řídící zařízení, které se připojuje k lokální Wifi síti a vytváří vlastní webový server. Když se zařízení připojí k tomuto webovému serveru, ESP32 načte teplotu a vlhkost pomocí senzoru DHT11 a odešle je do webového prohlížeče uživatele i s pěkným rozhraním.  
+
+
+V projektu jsem použil tyto součástky:
+ESP32
+DHT11
+Tři drátky
+10KΩ rezistor
+Krabička vytištěná na 3D tiskárně
+
+
+
+
+Funkční součásti teploměru
+
+
+Co je to ESP32?
+
+
+ESP32 je mikrokontrolérový čip, který je vyvinut firmou Espressif Systems. Jedná se o výkonný a univerzální čip, který kombinuje mikrokontrolér s integrovaným Wi-Fi a Bluetooth modulem. ESP32 je nástupcem populárního čipu ESP8266 a nabízí řadu vylepšení a rozšíření funkcionalit. 
+
+
+ESP32 je založen na architektuře Xtensa LX6 od firmy Tensilica. Má dvoujádrový procesor s frekvencí až 240 MHz, což mu poskytuje dostatečný výkon pro různé aplikace. Kromě toho obsahuje 520 KB SRAM paměti a 4 MB flash paměti pro programování a ukládání dat. 
+
+
+Hlavní výhodou ESP32 je jeho vestavěná podpora bezdrátové komunikace. Obsahuje Wi-Fi modul s podporou standardů 802.11 b/g/n, což umožňuje připojení k bezdrátovým sítím a komunikaci přes internet. Navíc má integrovaný Bluetooth, což umožňuje komunikaci s různými zařízeními, jako jsou chytré telefony, tablety, senzory a další.
+
+
+ESP32 je také vybaven množstvím periférií, jako jsou digitální a analogové piny, rozhraní pro komunikaci s různými zařízeními (UART, SPI, I2C), AD převodníky, PWM výstupy a další. To umožňuje snadnou integraci s různými senzory, aktuátory a dalšími periferiemi. 
+
+
+Díky svým vlastnostem je ESP32 široce využíván v oblasti IoT (Internet věcí), domácí automatizace, robotiky, vývoje embedded systémů a dalších aplikací, které vyžadují spojení s internetem, bezdrátovou komunikaci a zpracování dat.
+
+
+Co je to DHT11?
+
+
+DHT11 je digitální teplotní a vlhkostní senzor, který se často používá v různých projektech, jako jsou monitorovací systémy, meteorologické stanice, automatizace domácnosti a dalších aplikacích, které vyžadují měření teploty a vlhkosti. 
+
+
+DHT11 je relativně jednoduchý a cenově dostupný senzor. Je vybaven malým čipem, který obsahuje termistor pro měření teploty a kapacitní vlhkoměr pro měření vlhkosti. Senzor komunikuje pomocí jednoduchého sériového komunikačního protokolu a vrací digitální hodnoty teploty a vlhkosti.
+
+
+Hlavní technické parametry DHT11 jsou následující:   
+Rozsah měření teploty: 0-50 °C s přesností ±2 °C 
+Rozsah měření vlhkosti: 20-90% s přesností ±5% 
+Napájecí napětí: 3,3-5 V DC 
+Digitální komunikace: Jednoduchý sériový komunikační protokol s jedním datovým pinem  
+
+
+Je třeba si uvědomit, že DHT11 má omezenou přesnost a rychlost odezvy ve srovnání s pokročilejšími teplotními a vlhkostními senzory.
+
+
+Co je to 10KΩ rezistor?
+
+
+10KΩ rezistor je typ rezistoru s hodnotou odporu 10 kiloohmů (kΩ). Jedná se o hodnotu rezistoru, která určuje jeho odpor v elektrickém obvodu. Rezistor o hodnotě 10KΩ je poměrně běžně používaný rezistor v elektronice a vývoji obvodů.
+
+
+Hodnota 10KΩ znamená, že rezistor má odpor 10 000 ohmů, což je ekvivalentní 10 kiloohmům nebo 10 tisícům ohmů. Tato hodnota určuje, jak dobře rezistor omezuje tok elektrického proudu v obvodu. Rezistor se chová jako pasivní prvek, který zpomaluje nebo omezuje proud elektronů protékajících obvodem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Krabička
+
+
+  
+
+Pro svůj projekt jsem si vymodeloval krabičku v online programu Tinkercad, kterou jsem si nechal vytisknout ve škole na 3D tiskárně Prusa MINI z černého PLA filamentu. Do této krabičky jsem následně naskládal veškeré součástky a připojil napájecí kabel.
+
+
+Co je to Tinkercad?
+
+
+Tinkercad je webová platforma pro 3D modelování, elektroniku a tvorbu virtuálních prototypů. Je to nástroj navržený pro začátečníky, studenty a učitele, kteří se chtějí naučit základy 3D modelování a elektroniky.
+
+
+Tinkercad je vyvinut společností Autodesk, známou v oblasti CAD (Computer-Aided Design) softwaru. Tinkercad je přístupný z webového prohlížeče a nevyžaduje žádné složité stahování nebo instalace.
+
+
+Díky své jednoduchosti a přístupnosti je Tinkercad populární volbou pro začátečníky, kteří se chtějí naučit základy 3D modelování a elektroniky bez nutnosti složitých profesionálních softwarů.
+
+
+Co je to Prusa MINI?
+
+
+Prusa MINI je 3D tiskárna vyvinutá společností Prusa Research, která se specializuje na výrobu a inovace 3D tiskových zařízení. Prusa MINI je kompaktní a cenově dostupný model, který nabízí uživatelům možnost vytvářet vlastní 3D tisky.
+
+
+Prusa MINI je cenově dostupným modelem od společnosti Prusa Research, který nabízí uživatelům možnost vstoupit do světa 3D tisku s vysokou kvalitou a spolehlivostí. Tiskárna je oblíbená mezi domácími uživateli, školami a malými firmami, které chtějí začít s vlastní výrobou pomocí 3D tisku.
+
+
+Co je to PLA?
+PLA (Polyactic Acid) je termoplastický materiál používaný v 3D tisku. Je to biodegradabilní a bioodpadový polymer získávaný z obnovitelných zdrojů, jako je kukuřičný škrob, cukrová třtina nebo tapioka.
+
+
+PLA je jedním z nejoblíbenějších materiálů pro 3D tisk, zejména pro začátečníky a hobbyisty.
+
+
+PLA se často používá pro tištění různých objektů, jako jsou prototypy, modely, dekorativní předměty, hračky a další. Je dostupný v různých barevných variantách a také lze nalézt PLA s různými vlastnostmi, například PLA s různými efekty (metalický, průhledný atd.) nebo PLA s posílením vláken.
+
+
+
+
+Kód
+
+
+Kód k tomuto projektu jsem našel v jednom videu na Youtube a mírně jsem si ho poupravil k obrazu svému.
+  
+
+Vysvětlení kódu:
+
+
+Kód začíná načítáním potřebných knihoven pro WiFi připojení, ovládání webového serveru a čtení dat ze senzoru DHT11. Dále definuje přístupové údaje (název a heslo) k WiFi síti. 
+
+
+Funkce handleRoot() je obslužnou funkcí, která generuje HTML stránku s aktuálními hodnotami teploty a vlhkosti. Tato stránka se automaticky obnovuje každých 3 sekundy. 
+
+
+Ve funkci setup() je nastaveno sériové rozhraní pro komunikaci s počítačem a inicializuje se senzor DHT11. Poté se připojí k WiFi síti a zobrazí se informace o připojení. Dále se spustí MDNS responder (pro přístup pomocí doménového jména) a nastaví se obsluha požadavku na kořenovou cestu ("/") webového serveru. 
+
+
+V hlavní smyčce loop() se zpracovávají požadavky klientů na webový server. 
+
+
+Existují také dvě funkce readDHTTemperature() a readDHTHumidity(), které čtou teplotu a vlhkost ze senzoru DHT11. Pokud dojde k chybě při čtení, vypíše se chybová zpráva a funkce vrátí hodnotu -1. Jinak jsou na sériové rozhraní vypsány naměřené hodnoty a vráceny jako výsledek. 
+
+
+Celkově tento kód vytváří webový server, ke kterému se můžete připojit nejen přes  IP adresu, ale i přes definovaný odkaz, v mém případě “ESP32Teplomer.local”, kde najdete aktuální teplotu a vlhkost získané ze senzoru DHT11.  
+  
+
+
+
+
+
+Zapojení
+
+
+ESP32 teploměr je zapojen podle tohoto schématu:
+
+
+
+
+Shrnutí:
+
+
+Tento projekt se zaměřuje na využití mikrokontroléru ESP32 k vytvoření bezdrátového teploměru. Hlavním cílem je měřit teplotu a přenášet data bezdrátově pomocí WiFi.
+  
+
+Výhody ESP teploměru: 
+
+
+1, Bezdrátové měření: ESP32 umožňuje bezdrátové přenosy dat pomocí WiFi, což umožňuje monitorování teploty na dálku.
+2, Nízká cena: ESP32 je cenově dostupný mikrokontrolér, což znamená, že mně projet vyšel celkově na asi 120 Kč.
+3, Jednoduchost: ESP teploměr je velmi jednoduchý na případnou výměnu dílů, či budoucí rozšíření
+
+
+Nevýhody ESP teploměru:
+
+
+1, Chybné měření: Jelikož je použit né moc kvalitní senzor DHT11 tak je nutné počítat s menšími odchylkami.
+2, Nestabilní připojení k Wifi: Jelikož je použito ESP32, tak se mohou vyskytnou menší problémy nebo výpadky Wifi připojení.
+3, Napájení: Jelikož jsem do teploměru nepřidal samostatný zdroj, tak musí být stále připojen k síti.
+
+
+Mé problémy při sestavování projektu:
+
+
+Jelikož jsem měl si při pájení pravděpodobně odpálil čip v ESP32Cam, což byl můj původní projekt, tak jsem si musel narychlo sehnat pár součástek a proto jsem na tento projekt neměl moc času.
+
+
+Odkazy na projekty ze kterých jsem čerpal:
+https://lastminuteengineers.com/esp32-dht11-dht22-web-server-tutorial/
+https://www.youtube.com/watch?v=_GohoygyCNE
+
+
+
+
+Celý tento projekt i s kódem:
+https://github.com/Reaper12145/ESP32WirelessThermometer
